@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 
 import java.util.Arrays;
 import java.util.Random;
-
 public class Controller {
     @FXML
     private Label l1;
@@ -28,26 +27,24 @@ public class Controller {
         this.l1.setText(String.valueOf(game));
     }
     @FXML
-    private Dice die;
-    @FXML
     private Player player1;//Player1
+    @FXML
+    private Player player2;//Player2
+
     @FXML
     private int[][] snakes = {{99,80},{95,75},{92,88},{74,53},{62,19},{64,60},{46,25},{49,11},{16,6}};
     //A list of all the snakes
     @FXML
     private int[][] ladders = { {2,38},{7,14},{8,31},{15,26},{21,42},{36,44},{51,67},{71,91},{78,98},{87,94}};
-    @FXML
-    private Player player2;//Player2
+    //A list of all the ladders
+
     public boolean game=false;
-//    public int numb=1;
-//    public int pla=0;
     public int pla=0;//This will calculate the number of times we have player the game. Rolled the die
     @FXML Label gameStatus;
+    //A label to show the Game Status at a particular time.
 
     int i=0;
     int[][] ar=new int[100][2];
-
-
 
     @FXML
     public void but2(ActionEvent event) {
@@ -104,10 +101,10 @@ public class Controller {
          */
         //Algorithm to move player 1
         if(id==1){
-            int temp = player2Pos+ diceNum;
+            int temp = player1Pos+ diceNum;
             if(temp>100){
                 gameStatus.setText("CANNOT GO OVER 100 BRO!!");
-                temp = player2Pos;
+                temp = player1Pos;
             }
             if(temp == 100){
                 gameStatus.setText("GAME OVER. PLAYER 1 WINS. CONGRATS BRO!!");
@@ -125,17 +122,15 @@ public class Controller {
                 }
             }
             gameStatus.setText(temp +" IS JUST A NORMAL BLOCK. BORING!!");
-            player2Pos = temp;
+            player1Pos = temp;
         }
-        System.out.println(player1Pos);
-
+        //Algorithm to move player 2
         if(id==2){
             //Algorithm to move player 0
-            int temp = player1Pos+ diceNum;
-
+            int temp = player2Pos+ diceNum;
             if(temp>100){
                 gameStatus.setText("CANNOT GO OVER 100 BRO!!");
-                temp = player1Pos;
+                temp = player2Pos;
             }
             if(temp == 100){
                 gameStatus.setText("GAME OVER. PLAYER 2 WINS. CONGRATS BRO!!");
@@ -153,13 +148,10 @@ public class Controller {
                 }
             }
             gameStatus.setText(temp +" IS JUST A NORMAL BLOCK. BORING!!");
-            player1Pos = temp;
-            System.out.println(player2Pos);
+            player2Pos = temp;
         }
     }
     //The Code for the movement of Player Tokens is still to be written
-
-
 
     public void clk1(MouseEvent mouseEvent) {
         l2.setText("X:"+String.valueOf(mouseEvent.getSceneX()+" Y:"+String.valueOf(mouseEvent.getSceneY())));
@@ -168,8 +160,6 @@ public class Controller {
         System.out.println(Arrays.deepToString(ar));
         i++;
     }
-
-
     public void rollDie(MouseEvent mouseEvent) {
 
     }

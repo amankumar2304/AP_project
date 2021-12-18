@@ -103,25 +103,25 @@ public class Controller {
         if(id==1){
             int temp = player1Pos+ diceNum;
             if(temp>100){
-                gameStatus.setText("CANNOT GO OVER 100 BRO!!");
+                showGameStatus("CANNOT GO OVER 100 BRUH!!");
                 temp = player1Pos;
             }
             if(temp == 100){
-                gameStatus.setText("GAME OVER. PLAYER 1 WINS. CONGRATS BRO!!");
+                showGameStatus("GAME OVER. PLAYER 1 WINS. CONGRATS BRO!!");
             }
             for(int[] item : snakes){
                 if(temp == item[0]){
-                    gameStatus.setText("BITTEN BY A SNAKE AT POSITION "+item[0]+" WILL GO TO "+item[1]);
+                    showGameStatus("BITTEN BY A SNAKE AT POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
             for(int[] item : ladders){
                 if(temp == item[0]){
-                    gameStatus.setText("CAN CLIMB A LADDER FROM POSITION "+item[0]+" WILL GO TO "+item[1]);
+                    showGameStatus("CAN CLIMB A LADDER FROM POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
-            gameStatus.setText(temp +" IS JUST A NORMAL BLOCK. BORING!!");
+            showGameStatus(temp +" IS JUST A NORMAL BLOCK. BORING!!");
             player1Pos = temp;
         }
         //Algorithm to move player 2
@@ -129,25 +129,25 @@ public class Controller {
             //Algorithm to move player 0
             int temp = player2Pos+ diceNum;
             if(temp>100){
-                gameStatus.setText("CANNOT GO OVER 100 BRO!!");
+                showGameStatus("CANNOT GO OVER 100 BRUH!!");
                 temp = player2Pos;
             }
             if(temp == 100){
-                gameStatus.setText("GAME OVER. PLAYER 2 WINS. CONGRATS BRO!!");
+                showGameStatus("GAME OVER. PLAYER 2 WINS. CONGRATS BRO!!");
             }
             for(int[] item : snakes){
                 if(temp == item[0]){
-                    gameStatus.setText("BITTEN BY A SNAKE AT POSITION "+item[0]+" WILL GO TO "+item[1]);
+                    showGameStatus("BITTEN BY A SNAKE AT POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
             for(int[] item : ladders){
                 if(temp == item[0]){
-                    gameStatus.setText("CAN CLIMB A LADDER FROM POSITION "+item[0]+" WILL GO TO "+item[1]);
+                    showGameStatus("CAN CLIMB A LADDER FROM POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
-            gameStatus.setText(temp +" IS JUST A NORMAL BLOCK. BORING!!");
+            showGameStatus(temp +" IS JUST A NORMAL BLOCK. BORING!!");
             player2Pos = temp;
         }
     }
@@ -162,6 +162,10 @@ public class Controller {
     }
     public void rollDie(MouseEvent mouseEvent) {
 
+    }
+    //To show GameStatus
+    public void showGameStatus(String text){
+        gameStatus.setText(text);
     }
 }
 /**

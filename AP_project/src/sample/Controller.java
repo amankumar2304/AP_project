@@ -77,10 +77,12 @@ public class Controller {
         if(pla%2!=0){
 
             this.l1.setText("PLAYER-1 GOT "+ num);
+            translate(ply1,num,b1);
 //            pla++;
         }
         if(pla%2==0){
             this.l1.setText("PLAYER-2 GOT "+ num);
+            translate(ply2,num,b1);
 //            pla++;
         }
 
@@ -150,6 +152,31 @@ public class Controller {
         System.out.println(Arrays.deepToString(ar));
         i++;
     }
+    
+    public void translate(ImageView img,int n,Button b){
+        TranslateTransition tt=new TranslateTransition();
+        tt.setDuration(Duration.millis(1000));
+        tt.setNode(img);
+//        tt.setToX(coordinates[n][0]);
+//        tt.setToY(coordinates[n][1]);
+        Bounds bou=b.localToScene(b.getBoundsInLocal());
+
+        System.out.println("mx"+bou.getMinX());
+        System.out.println("my"+bou.getMinY());
+
+//        tt.setToX(coordinates[n-1][0]-bou.getMinX());
+//        tt.setToY(coordinates[n-1][1]-bou.getMinY());
+        tt.setToX(coordinates[n-1][0]-939);
+        tt.setToY(coordinates[n-1][1]-200);
+        tt.play();
+
+        System.out.println(coordinates[n-1][0]);
+        System.out.println(coordinates[n-1][1]);
+
+//        b.setTranslateX(coordinates[n][0]-bou.getMinX());
+//        b.setTranslateY(coordinates[n][1]-bou.getMinY());
+    }
+}
 }
 /**
  * SNAKES:

@@ -30,9 +30,9 @@
             <Image url="@casino.png" />
          </image>
       </ImageView>
-      <Button fx:id="b2" layoutX="919.0" layoutY="506.0" mnemonicParsing="false"  prefHeight="58.0" prefWidth="88.0" text="ROLL DICE" />
+      <Button fx:id="b2" layoutX="919.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#rollDie" prefHeight="58.0" prefWidth="88.0" text="ROLL DICE" />
       <Button fx:id="b1" layoutX="937.0" layoutY="628.0" mnemonicParsing="false" text="START" />
       <Label fx:id="l1" layoutX="947.0" layoutY="429.0" text="Label" />
-      <Button layoutX="885.0" layoutY="466.0" mnemonicParsing="false"  text="Button" />
+      <Button layoutX="885.0" layoutY="466.0" mnemonicParsing="false" text="Button" />
    </children>
 </Pane>

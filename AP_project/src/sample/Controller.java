@@ -103,25 +103,20 @@ public class Controller {
         if(id==1){
             int temp = player1Pos+ diceNum;
             if(temp>100){
-                showGameStatus("CANNOT GO OVER 100 BRUH!!");
                 temp = player1Pos;
             }
             if(temp == 100){
-                showGameStatus("GAME OVER. PLAYER 1 WINS. CONGRATS BRO!!");
             }
             for(int[] item : snakes){
                 if(temp == item[0]){
-                    showGameStatus("BITTEN BY A SNAKE AT POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
             for(int[] item : ladders){
                 if(temp == item[0]){
-                    showGameStatus("CAN CLIMB A LADDER FROM POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
-            showGameStatus(temp +" IS JUST A NORMAL BLOCK. BORING!!");
             player1Pos = temp;
         }
         //Algorithm to move player 2
@@ -129,25 +124,20 @@ public class Controller {
             //Algorithm to move player 0
             int temp = player2Pos+ diceNum;
             if(temp>100){
-                showGameStatus("CANNOT GO OVER 100 BRUH!!");
                 temp = player2Pos;
             }
             if(temp == 100){
-                showGameStatus("GAME OVER. PLAYER 2 WINS. CONGRATS BRO!!");
             }
             for(int[] item : snakes){
                 if(temp == item[0]){
-                    showGameStatus("BITTEN BY A SNAKE AT POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
             for(int[] item : ladders){
                 if(temp == item[0]){
-                    showGameStatus("CAN CLIMB A LADDER FROM POSITION "+item[0]+" WILL GO TO "+item[1]);
                     temp = item[1];
                 }
             }
-            showGameStatus(temp +" IS JUST A NORMAL BLOCK. BORING!!");
             player2Pos = temp;
         }
     }
@@ -159,13 +149,6 @@ public class Controller {
         ar[i][1]= (int) mouseEvent.getSceneY();
         System.out.println(Arrays.deepToString(ar));
         i++;
-    }
-    public void rollDie(MouseEvent mouseEvent) {
-
-    }
-    //To show GameStatus
-    public void showGameStatus(String text){
-        gameStatus.setText(text);
     }
 }
 /**

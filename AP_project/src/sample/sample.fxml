@@ -35,5 +35,20 @@
         <Label fx:id="l1" layoutX="925.0" layoutY="429.0" text="Label" />
         <Label fx:id="l2" layoutX="109.0" layoutY="89.0" onMouseClicked="#clk1" text="Label" />
       <Label fx:id="gameStatus" layoutX="109.0" layoutY="231.0" text="Label" />
+      <ImageView fx:id="arrow" fitHeight="46.0" fitWidth="107.0" layoutX="866.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@arrow-up.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="510.0" fitWidth="44.0" layoutX="510.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" scaleY="2.8">
+         <image>
+            <Image url="@board1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="510.0" fitWidth="44.0" layoutX="511.0" layoutY="-174.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" scaleY="2.8">
+         <image>
+            <Image url="@board1.jpg" />
+         </image>
+      </ImageView>
     </children>
 </Pane>

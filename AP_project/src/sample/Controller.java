@@ -45,6 +45,7 @@ public class Controller {
 
     int i=0;
     int[][] ar=new int[100][2];
+    int temp1=1;
 
     @FXML
     public void but2(ActionEvent event) {
@@ -77,12 +78,14 @@ public class Controller {
         if(pla%2!=0){
 
             this.l1.setText("PLAYER-1 GOT "+ num);
-            translate(ply1,num,b1);
+            translate1(ply1,temp1);
+            temp1++;
 //            pla++;
         }
         if(pla%2==0){
             this.l1.setText("PLAYER-2 GOT "+ num);
-            translate(ply2,num,b1);
+            translate2(ply2,temp1);
+            temp1++;
 //            pla++;
         }
 
@@ -152,29 +155,24 @@ public class Controller {
         System.out.println(Arrays.deepToString(ar));
         i++;
     }
-    
-    public void translate(ImageView img,int n,Button b){
+    public void translate1(ImageView img,int n){
         TranslateTransition tt=new TranslateTransition();
         tt.setDuration(Duration.millis(1000));
         tt.setNode(img);
-//        tt.setToX(coordinates[n][0]);
-//        tt.setToY(coordinates[n][1]);
-        Bounds bou=b.localToScene(b.getBoundsInLocal());
 
-        System.out.println("mx"+bou.getMinX());
-        System.out.println("my"+bou.getMinY());
-
-//        tt.setToX(coordinates[n-1][0]-bou.getMinX());
-//        tt.setToY(coordinates[n-1][1]-bou.getMinY());
-        tt.setToX(coordinates[n-1][0]-939);
-        tt.setToY(coordinates[n-1][1]-200);
+        tt.setToX(coordinates[n-1][0]-915);
+        tt.setToY(coordinates[n-1][1]-170);
         tt.play();
 
-        System.out.println(coordinates[n-1][0]);
-        System.out.println(coordinates[n-1][1]);
+    }
+    public void translate2(ImageView img,int n){
+        TranslateTransition tt=new TranslateTransition();
+        tt.setDuration(Duration.millis(1000));
+        tt.setNode(img);
+        tt.setToX(coordinates[n-1][0]-1005);
+        tt.setToY(coordinates[n-1][1]-165);
+        tt.play();
 
-//        b.setTranslateX(coordinates[n][0]-bou.getMinX());
-//        b.setTranslateY(coordinates[n][1]-bou.getMinY());
     }
 }
 }

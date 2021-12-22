@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ImageView fitHeight="137.0" fitWidth="218.0" layoutX="431.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" scaleX="5.0" scaleY="6.0">
+         <image>
+            <Image url="@661.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="endlabel" layoutX="375.0" layoutY="535.0" text="PLAYER-2 WON" textFill="WHITE">
+         <font>
+            <Font name="Stencil" size="48.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
